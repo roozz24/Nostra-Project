@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nostra - Collections</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .card-hover-effect {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .card-hover-effect:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white/80 backdrop-blur-md shadow-md fixed w-full z-20 top-0">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-gray-900">Nostra</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="Home.html" class="text-gray-600 hover:text-gray-900 transition duration-300">Home</a>
+                <a href="collections.html"
+                    class="text-gray-900 font-semibold border-b-2 border-gray-900 pb-1">Collections</a>
+                <a href="contact.html" class="text-gray-600 hover:text-gray-900 transition duration-300">Contact Us</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-900 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="Home.html" class="block py-2 text-gray-600 hover:text-gray-900">Home</a>
+            <a href="collections.html" class="block py-2 text-gray-900 font-semibold">Collections</a>
+            <a href="contact.html" class="block py-2 text-gray-600 hover:text-gray-900">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24">
+        <div class="container mx-auto px-6 py-12">
+            <header class="text-center mb-12">
+                <h1 class="text-5xl font-extrabold text-gray-900">Our Collections</h1>
+                <p class="text-lg text-gray-600 mt-4">Browse our curated selection of high-quality apparel and
+                    accessories.</p>
+            </header>
+
+            <!-- Filters Section -->
+            <section class="bg-white p-6 rounded-lg shadow-lg mb-12 sticky">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Search Filter -->
+                    <div class="md:col-span-1">
+                        <label for="search" class="block text-lg font-semibold mb-2">Search</label>
+                        <input type="text" id="search" placeholder="Search for products..."
+                            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500">
+                    </div>
+                    <!-- Category Filter -->
+                    <div class="md:col-span-2">
+                        <h4 class="text-lg font-semibold mb-3">Category</h4>
+                        <div class="flex flex-wrap items-center gap-x-6 gap-y-2" id="category-filters">
+                            <div>
+                                <input type="radio" id="cat-all" name="category" value="all"
+                                    class="text-gray-800 focus:ring-gray-500" checked>
+                                <label for="cat-all" class="ml-2 text-gray-700">All</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="cat-apparel" name="category" value="Apparel"
+                                    class="text-gray-800 focus:ring-gray-500">
+                                <label for="cat-apparel" class="ml-2 text-gray-700">Apparel</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="cat-accessories" name="category" value="Accessories"
+                                    class="text-gray-800 focus:ring-gray-500">
+                                <label for="cat-accessories" class="ml-2 text-gray-700">Accessories</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="cat-footwear" name="category" value="Footwear"
+                                    class="text-gray-800 focus:ring-gray-500">
+                                <label for="cat-footwear" class="ml-2 text-gray-700">Footwear</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Products Grid -->
+            <section id="products-container" class="w-full">
+                <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <!-- Product Card 1 -->
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect"
+                        data-name="Classic White Tee" data-category="Apparel" data-price="29.99">
+                        <img src="./Images/whiteT.png"
+                            alt="Classic White Tee" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Classic White Tee</h3>
+                            <p class="text-gray-600 mb-4">$29.99</p>
+                            <button
+                                class="w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-700 transition duration-300">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Product Card 2 -->
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect"
+                        data-name="Denim Jacket" data-category="Apparel" data-price="79.99">
+                        <img src="./Images/Denim.png"
+                            alt="Denim Jacket" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Denim Jacket</h3>
+                            <p class="text-gray-600 mb-4">$79.99</p>
+                            <button
+                                class="w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-700 transition duration-300">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                    <!-- Add all other product cards here following the same structure -->
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect"
+                        data-name="Leather Boots" data-category="Footwear" data-price="129.99">
+                        <img src="./Images/leatherBoot.png"
+                            alt="Leather Boots" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Leather Boots</h3>
+                            <p class="text-gray-600 mb-4">$129.99</p><button
+                                class="w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-700 transition duration-300">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect"
+                        data-name="Running Sneakers" data-category="Footwear" data-price="89.99">
+                        <img src="./Images/Sneakers.png"
+                            alt="Running Sneakers" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Running Sneakers</h3>
+                            <p class="text-gray-600 mb-4">$89.99</p><button
+                                class="w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-700 transition duration-300">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect"
+                        data-name="Silver Bracelet" data-category="Accessories" data-price="49.99">
+                        <img src="./Images/silverBrace.png"
+                            alt="Silver Bracelet" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Silver Bracelet</h3>
+                            <p class="text-gray-600 mb-4">$49.99</p><button
+                                class="w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-700 transition duration-300">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect"
+                        data-name="Minimalist Watch" data-category="Accessories" data-price="149.99">
+                        <img src="./Images/c6.jpeg"
+                            alt="Minimalist Watch" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Schaffhausen</h3>
+                            <p class="text-gray-600 mb-4">$149.99</p><button
+                                class="w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-700 transition duration-300">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect"
+                        data-name="Casual Shirt" data-category="Apparel" data-price="45.99">
+                        <img src="./Images/collection2.jpg"
+                            alt="Casual Shirt" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Casual Shirt</h3>
+                            <p class="text-gray-600 mb-4">$45.99</p><button
+                                class="w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-700 transition duration-300">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect"
+                        data-name="Leather Backpack" data-category="Accessories" data-price="99.99">
+                        <img src="./Images/collection6.jpg"
+                            alt="Leather Backpack" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Leather Backpack</h3>
+                            <p class="text-gray-600 mb-4">$99.99</p><button
+                                class="w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-700 transition duration-300">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect"
+                        data-name="Stylish Sunglasses" data-category="Accessories" data-price="39.99">
+                        <img src="./Images/sunglass.jpg"
+                            alt="Stylish Sunglasses" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Stylish Sunglasses</h3>
+                            <p class="text-gray-600 mb-4">$39.99</p><button
+                                class="w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-700 transition duration-300">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect"
+                        data-name="Beige Trench Coat" data-category="Apparel" data-price="159.99">
+                        <img src="./Images/beigeCoat.png"
+                            alt="Beige Trench Coat" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Beige Trench Coat</h3>
+                            <p class="text-gray-600 mb-4">$159.99</p><button
+                                class="w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-700 transition duration-300">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect"
+                        data-name="Classic Blue Jeans" data-category="Apparel" data-price="69.99">
+                        <img src="./Images/bluejean.png"
+                            alt="Classic Blue Jeans" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Classic Blue Jeans</h3>
+                            <p class="text-gray-600 mb-4">$69.99</p><button
+                                class="w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-700 transition duration-300">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect"
+                        data-name="Fedora Hat" data-category="Accessories" data-price="34.99">
+                        <img src="./Images/hat.png"
+                            alt="Fedora Hat" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Fedora Hat</h3>
+                            <p class="text-gray-600 mb-4">$34.99</p><button
+                                class="w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-700 transition duration-300">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect"
+                        data-name="Leather Belt" data-category="Accessories" data-price="24.99">
+                        <img src="./Images/belt.png"
+                            alt="Leather Belt" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Leather Belt</h3>
+                            <p class="text-gray-600 mb-4">$24.99</p><button
+                                class="w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-700 transition duration-300">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect"
+                        data-name="Polo Shirt" data-category="Apparel" data-price="39.99">
+                        <img src="./Images/polo.png"
+                            alt="Polo Shirt" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Polo Shirt</h3>
+                            <p class="text-gray-600 mb-4">$39.99</p><button
+                                class="w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-700 transition duration-300">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect"
+                        data-name="Chelsea Boots" data-category="Footwear" data-price="139.99">
+                        <img src="./Images/chelseaBoot.png"
+                            alt="Chelsea Boots" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Chelsea Boots</h3>
+                            <p class="text-gray-600 mb-4">$139.99</p><button
+                                class="w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-700 transition duration-300">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card bg-white rounded-lg shadow-lg overflow-hidden card-hover-effect"
+                        data-name="Wool Scarf" data-category="Accessories" data-price="29.99">
+                        <img src="./Images/wool.png"
+                            alt="Wool Scarf" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Wool Scarf</h3>
+                            <p class="text-gray-600 mb-4">$29.99</p><button
+                                class="w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-700 transition duration-300">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Message for when no products are found -->
+                <div id="no-results-message" class="hidden col-span-full text-center text-gray-500 text-xl py-10">
+                    The product you searched for is currently unavailable.
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white mt-16">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Nostra</h3>
+                    <p class="text-gray-400">Defining your style with quality and passion since 2023.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul>
+                        <li class="mb-2"><a href="index.html"
+                                class="hover:text-gray-300 transition duration-300">Home</a></li>
+                        <li class="mb-2"><a href="collections.html"
+                                class="hover:text-gray-300 transition duration-300">Collections</a></li>
+                        <li class="mb-2"><a href="contact.html"
+                                class="hover:text-gray-300 transition duration-300">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><svg class="w-6 h-6"
+                                fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                    clip-rule="evenodd" />
+                            </svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><svg class="w-6 h-6"
+                                fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                            </svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><svg class="w-6 h-6"
+                                fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427-.465C9.795 2.013 10.148 2 12.315 2h.001zm-1.04 4.25a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM12 15.75a3.75 3.75 0 110-7.5 3.75 3.75 0 010 7.5zM16.5 7.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
+                                    clip-rule="evenodd" />
+                            </svg></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <p class="text-gray-400">Email: nostrafashion@gmail.com</p>
+                    <p class="text-gray-400">Phone: (123) 456-7890</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+                <p>&copy; 2024 Nostra. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="collection.js"></script>
