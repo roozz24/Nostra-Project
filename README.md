@@ -42,23 +42,6 @@ This project is built exclusively with front-end technologies, requiring no back
 
 ---
 
-## 🚀 Getting Started
-
-To get a local copy up and running, simply follow these steps:
-
-1.  **Clone the repository:**
-    ```sh
-    git clone [https://github.com/your-username/nostra.git](https://github.com/your-username/nostra.git)
-    ```
-2.  **Navigate to the project directory:**
-    ```sh
-    cd nostra
-    ```
-3.  **Open `index.html` in your browser:**
-    * You can do this by right-clicking the file and selecting "Open with..." or by using a live server extension in your code editor (like Live Server for VS Code).
-
----
-
 ## 📂 File Structure
 
 The project is organized into clear, distinct files for easy maintenance:
