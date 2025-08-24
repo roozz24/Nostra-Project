@@ -2,7 +2,7 @@
 
 ![Nostra Hero Section](https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?q=80&w=1200)
 
-**Live Demo:** [nostra-yourusername.github.io](https://example.com)
+**Live Demo:** [[nostra-yourusername.github.io](https://roozz24.github.io/Nostra-Project/)]
 
 ---
 
