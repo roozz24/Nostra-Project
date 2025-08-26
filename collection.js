@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- DOM ELEMENTS ---
-    // Get references to all the interactive elements on the page.
     const searchInput = document.getElementById('search');
     const categoryFilters = document.querySelectorAll('input[name="category"]');
     const productCards = document.querySelectorAll('.product-card');
@@ -10,9 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     /**
      * This is the main function that filters the products based on user input.
-     * Instead of re-creating HTML, it just shows or hides the existing product cards.
      */
-    const applyFilters = () => {
+    const applyFilters = function() {
         // Get the current values from the search and category filters.
         const searchTerm = searchInput.value.toLowerCase();
         const selectedCategory = document.querySelector('input[name="category"]:checked').value;
